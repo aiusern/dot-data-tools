@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The tools are encrypted in payload.js and only run after the right password decrypts them.
+     The same no-network policy as the tools themselves applies: nothing can be sent anywhere. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-zAFRMKqFIefwiPiImOupSczcv7ON8L0Sm0S3Jzw6b0E=' 'sha256-3UEnpJYbAj4gxSmlTdRoZ8Cn/9UpbyAoANoaK3r4l34=' 'sha256-KdjGJR5d4T0/qop+yj2TR9cmvXfT7D+UT/6oEq0oS7U=' 'sha256-ibt8sKkuR9JODDF1lhOTWiOhPSN4p3Q4zusO5OmMQsM=' 'sha256-9bNFNtZ1pzhRNfeHm0MN50GVAfQ0DZBRo1M4Hk1KNK8=' 'sha256-tBqX6b7XL0jg6nIg6Daw8DK9zG3aZLyxhoSQQrHhDs4=' 'sha256-T6lS3TP2T6qeePTGrIi+bHzQzzaqDFTDtxPihkaldUs=' 'sha256-JUPbmPR0uUGo1Efj7FANr7q6LBaWMT6fmkhfnB28S3o='; style-src 'self' 'sha256-xt97cDbVpTelCEyHGXVwbGCKJKyKz1EGRp6AcDsOXIU='; img-src 'self' data: blob:; font-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'; worker-src 'none'; frame-src 'none'; media-src 'none'; manifest-src 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex, nofollow">
+<title>DOT Data Tools</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230f766e'/%3E%3Cpath d='M9 10h14v3H9zm0 5h14v3H9zm0 5h9v3H9z' fill='white'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="gate.css" id="gate-css">
+</head>
+<body class="gate-body">
+<main class="gate">
+  <form class="gate-card" id="gate-form" autocomplete="on">
+    <svg class="gate-logo" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8"/><path d="M9 10h14v3H9zm0 5h14v3H9zm0 5h9v3H9z"/></svg>
+    <h1>DOT Data Tools</h1>
+    <p class="gate-sub">Internal tools. Enter the team password to continue.</p>
+    <input type="text" name="username" value="DOT Data Tools" autocomplete="username" hidden>
+    <label class="gate-label" for="gate-pw">Password</label>
+    <input type="password" id="gate-pw" name="password" autocomplete="current-password" required autofocus>
+    <label class="gate-chk"><input type="checkbox" id="gate-remember"> Remember on this computer <span>(not on shared computers)</span></label>
+    <button type="submit" id="gate-btn">Unlock</button>
+    <p class="gate-msg" id="gate-msg" role="alert" hidden></p>
+    <p class="gate-foot">Files you open in these tools are processed on your computer only and are never uploaded.</p>
+  </form>
+  <noscript><p class="gate-msg">Please enable JavaScript to use the tools.</p></noscript>
+</main>
+<script src="payload.js"></script>
+<script src="gate.js"></script>
+</body>
+</html>
